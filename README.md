@@ -23,6 +23,10 @@ Github项目地址，欢迎Fork，Star：https://github.com/yangcvo/Linux
 * [LAMP一键安装包-CentOS 5/6下自动编译安装Apache,MySQL,PHP，phpmyadmin](https://github.com/yangcvo/Linux/blob/master/LAMP/LAMP%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E5%8C%85-CentOS%205:6%E4%B8%8B%E8%87%AA%E5%8A%A8%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85.md)
 * [CentOS7可以通过yum一键安装与卸载LAMP环境](https://github.com/yangcvo/Linux/blob/master/LAMP/yum%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDLAMP%E7%8E%AF%E5%A2%83.md)
 
+---
+
+* [建立虚拟用户的vsftpd安装配置报错问题收集](https://github.com/yangcvo/Linux/blob/master/Vsftpd/%E5%BB%BA%E7%AB%8B%E8%99%9A%E6%8B%9F%E7%94%A8%E6%88%B7%E7%9A%84vsftpd%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.md)
+* [建立虚拟用户的vsftpd安装配置过程](https://github.com/yangcvo/Linux/blob/master/Vsftpd/%E5%BB%BA%E7%AB%8B%E8%99%9A%E6%8B%9F%E7%94%A8%E6%88%B7%E7%9A%84vsftpd%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B.md)
 
 
 电子邮件：yangcvo@gmail.com（常用）
