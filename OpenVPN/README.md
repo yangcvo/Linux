@@ -48,24 +48,24 @@ f40fd5c985aa4806847525d8bba8727f
 
 > 将key输入对话框
 
-![](media/15300102876978.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300102876978.jpg)
 
 > 将key输入到web界面的图中,保存继续,会出现登录界面,默认登录用户名和密码都是 pritunl/pritunl
 
-![](media/15300103448209.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300103448209.jpg)
 
 > 登录后，如下页面自行设置新的用户/密码(公网IP为vpn自己识别到的IP)
 
-![](media/15300104758732.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300104758732.jpg)
 
 > 添加组织
 
-![](media/15300107035239.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300107035239.jpg)
 
 
 > 添加用户,将用户关联到组织,设置用户密码(Pin就是后面客户端连接时的密码，Name就是用户名) 
 
-![](media/15300109030250.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300109030250.jpg)
 
 
 > 添加服务
@@ -75,24 +75,24 @@ f40fd5c985aa4806847525d8bba8727f
 
 > 配置servers dns及端口
 
-![](media/15300111916134.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300111916134.jpg)
 
 > 将服务与组织关联 
 
-![](media/15300112494267.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300112494267.jpg)
 
-![](media/15300095932941.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300095932941.jpg)
 
 > 开启服务
 
-![](media/15300112869837.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300112869837.jpg)
 
 
 > 查看服务启动状态和公网路由端口映射。
 
-![](media/15300655409059.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300655409059.jpg)
 
-![](media/15300645262321.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300645262321.jpg)
 
 
 
@@ -113,11 +113,11 @@ f40fd5c985aa4806847525d8bba8727f
 
 ### Two-Step Authentication Key
 
-![](media/15300114385944.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300114385944.jpg)
 
-![](media/15300114706850.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300114706850.jpg)
 
-![](media/15300117055016.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300117055016.jpg)
 
 
 - linux客户端
@@ -376,7 +376,7 @@ https://github.com/jinyuchen724/linux-base/blob/master/7.openvpn/03-openvpn-inst
 先输入密码+五位数随机的动态认证。
 
 [Client configuration for PINs and two-step authentication](https://docs.pritunl.com/docs/two-step-authentication)
-![](media/15300656751587.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300656751587.jpg)
 
 如果登录不上，那么删除原来的client.ovpn。
 启动openvpn,连接即可。
