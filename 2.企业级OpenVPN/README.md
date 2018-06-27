@@ -48,24 +48,24 @@ f40fd5c985aa4806847525d8bba8727f
 
 > 将key输入对话框
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300102876978.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300102876978.jpg)
 
 > 将key输入到web界面的图中,保存继续,会出现登录界面,默认登录用户名和密码都是 pritunl/pritunl
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300103448209.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300103448209.jpg)
 
 > 登录后，如下页面自行设置新的用户/密码(公网IP为vpn自己识别到的IP)
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300104758732.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300104758732.jpg)
 
 > 添加组织
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300107035239.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300107035239.jpg)
 
 
 > 添加用户,将用户关联到组织,设置用户密码(Pin就是后面客户端连接时的密码，Name就是用户名) 
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300109030250.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300109030250.jpg)
 
 
 > 添加服务
@@ -75,24 +75,24 @@ f40fd5c985aa4806847525d8bba8727f
 
 > 配置servers dns及端口
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300111916134.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300111916134.jpg)
 
 > 将服务与组织关联 
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300112494267.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300112494267.jpg)
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300095932941.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300095932941.jpg)
 
 > 开启服务
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300112869837.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300112869837.jpg)
 
 
 > 查看服务启动状态和公网路由端口映射。
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300655409059.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300655409059.jpg)
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300645262321.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300645262321.jpg)
 
 
 
@@ -113,11 +113,11 @@ f40fd5c985aa4806847525d8bba8727f
 
 ### Two-Step Authentication Key
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300114385944.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300114385944.jpg)
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300114706850.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300114706850.jpg)
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300117055016.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300117055016.jpg)
 
 
 - linux客户端
@@ -131,7 +131,7 @@ f40fd5c985aa4806847525d8bba8727f
 > 设置配置文件(将管理员提供的用户配置文件导入)
 
 ```
-# cat /etc/openvpn/client.conf
+# cat /etc/2.企业级OpenVPN/client.conf
   #{
   # "sync_secret": "XfefBn17cDzosXmsM6m5GehT1K9MtasU",
   # "organization_id": "59b7826c35ef2311e76401aa",
@@ -329,16 +329,16 @@ f40fd5c985aa4806847525d8bba8727f
 > 保存密码,自动启动配置(可以自启动，自动拨号连接) 
 
 ```
-# cat /etc/openvpn/client.conf 
+# cat /etc/2.企业级OpenVPN/client.conf 
 auth-user-pass 
 变更为
-auth-user-pass /etc/openvpn/pass.txt
+auth-user-pass /etc/2.企业级OpenVPN/pass.txt
 ```
 
 - 将用户名和密码写入文件
 
 ```
-# cat /etc/openvpn/pass.txt
+# cat /etc/2.企业级OpenVPN/pass.txt
 ops
 123456
 ```
@@ -376,7 +376,7 @@ https://github.com/jinyuchen724/linux-base/blob/master/7.openvpn/03-openvpn-inst
 先输入密码+五位数随机的动态认证。
 
 [Client configuration for PINs and two-step authentication](https://docs.pritunl.com/docs/two-step-authentication)
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/15300656751587.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/15300656751587.jpg)
 
 如果登录不上，那么删除原来的client.ovpn。
 启动openvpn,连接即可。

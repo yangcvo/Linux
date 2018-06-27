@@ -103,31 +103,31 @@ openvpn --genkey --secret keys/yancy.key
 ```
 
  查看keys目录下生成的文件：
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/14980202259436.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/14980202259436.jpg)
 
 ## 3、创建服务器端配置文件
 
 ###### 3.1 在openvpn的配置目录下新建一个keys目录
 
 ```
-mkdir /etc/openvpn/keys
+mkdir /etc/2.企业级OpenVPN/keys
 ```
 
 ###### 3.2将需要用到的openvpn证书和密钥复制一份到刚创建好的keys目录中
 
 ```bash
-cp /usr/share/easy-rsa/2.0/keys/* /etc/openvpn/keys/
+cp /usr/share/easy-rsa/2.0/keys/* /etc/2.企业级OpenVPN/keys/
 ```
-###### 3.3复制一份服务器端配置文件模板server.conf到/etc/openvpn/
+###### 3.3复制一份服务器端配置文件模板server.conf到/etc/2.企业级OpenVPN/
 
 ```bash
-cp /usr/share/doc/openvpn-2.4.3/sample/sample-config-files/server.conf /etc/openvpn/
+cp /usr/share/doc/openvpn-2.4.3/sample/sample-config-files/server.conf /etc/2.企业级OpenVPN/
 ```
 
 ###### 3.4编辑server.conf
 
 ```bash
-vim /etc/openvpn/server.conf
+vim /etc/2.企业级OpenVPN/server.conf
 port 1194
 ```
 
@@ -139,7 +139,7 @@ proto tcp
 ;dev tap
 dev tun
 ```
-###### 路径前面加keys，全路径为/etc/openvpn/keys/ca.crt
+###### 路径前面加keys，全路径为/etc/2.企业级OpenVPN/keys/ca.crt
 
 ```bash
 ca keys/ca.crt
@@ -176,12 +176,12 @@ comp-lzo
 persist-key
 persist-tun
 ```
-###### OpenVPN的状态日志，默认为/etc/openvpn/openvpn-status.log
+###### OpenVPN的状态日志，默认为/etc/2.企业级OpenVPN/openvpn-status.log
 
 ```bash
 status openvpn-status.log
 ```
-###### OpenVPN的运行日志，默认为/etc/openvpn/openvpn.log 
+###### OpenVPN的运行日志，默认为/etc/2.企业级OpenVPN/openvpn.log 
 
 ```bash
 log-append openvpn.log
@@ -195,7 +195,7 @@ verb 5
 ###### 配置密码认证
 
 ```bash
-auth-user-pass-verify /etc/openvpn/checkpsw.sh via-env
+auth-user-pass-verify /etc/2.企业级OpenVPN/checkpsw.sh via-env
 ```
 ###### 配置无需密钥认证
 
@@ -207,7 +207,7 @@ script-security 3
 ```
 
 ```bash
-[root@yancy openvpn]# vim /etc/openvpn/checkpsw.sh
+[root@yancy openvpn]# vim /etc/2.企业级OpenVPN/checkpsw.sh
 #!/bin/sh
 ###########################################################
 # checkpsw.sh (C) 2004 Mathias Sundman <mathias@openvpn.se>
@@ -217,8 +217,8 @@ script-security 3
 # one row per user with the username first followed by
 # one or more space(s) or tab(s) and then the password.
 
-PASSFILE="/etc/openvpn/psw-file"
-LOG_FILE="/etc/openvpn/openvpn-password.log"
+PASSFILE="/etc/2.企业级OpenVPN/psw-file"
+LOG_FILE="/etc/2.企业级OpenVPN/openvpn-password.log"
 TIME_STAMP=`date "+%Y-%m-%d %T"`
 ###########################################################
 if [ ! -r "${PASSFILE}" ]; then
@@ -247,7 +247,7 @@ exit 1
 openVPN 创建的用户 - 用户名和密码：
 
 ```bash
-[root@yancy openvpn]# vim /etc/openvpn/psw-file
+[root@yancy openvpn]# vim /etc/2.企业级OpenVPN/psw-file
 yancy yancy
 ```
 ## 4、配置内核和防火墙，启动服务
@@ -333,9 +333,9 @@ MAC 客户端使用
 2、打开客户端 
 双击：client.ovpn就可以。按提示输入用户和密码。
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/14987039352391.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/14987039352391.jpg)
 
-![](https://github.com/yangcvo/Linux/blob/master/OpenVPN/14987039455224.jpg)
+![](https://github.com/yangcvo/Linux/blob/master/2.企业级OpenVPN/14987039455224.jpg)
 
 
 参考资料：
