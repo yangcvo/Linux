@@ -1,0 +1,29 @@
+#!/bin/sh
+if [ "$REQUEST_METHOD" = "POST" ];then
+	QUERY_STRING=`cat -`
+fi
+
+LINE=`echo $QUERY_STRING|sed 's/&/	/g'`
+#
+############################################
+#
+#  
+get_value (){
+CUR_NAME=""
+CUR_VALUE=""
+for LOOP in $LINE
+do
+	NAME=`echo $LOOP|sed 's/=/ /g'|awk '{print $1}'`
+	VALUE=`echo $LOOP|sed 's/=/ /g'|awk '{print $2}'|sed -e 's/%\(\)/\\\x/g'|sed 's/+/ /g'`
+	if [ "$NAME" = "$CUR_NAME" ];then
+		CUR_VALUE="$CUR_VALUE $VALUE"
+		VARS="${NAME}=\`printf \"\${CUR_VALUE}\"\`"
+	else
+		VARS="${NAME}=\`printf \"\${VALUE}\"\`"
+		CUR_NAME="$NAME"
+		CUR_VALUE="$VALUE"
+	fi
+	eval $VARS
+done
+}
+

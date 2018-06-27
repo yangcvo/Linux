@@ -1,0 +1,4 @@
+zone "DOMAIN_NAME"  IN {
+	type master;
+	file "db/hosts.DOMAIN_NAME";
+};

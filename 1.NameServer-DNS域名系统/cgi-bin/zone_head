@@ -1,0 +1,13 @@
+@             IN SOA  tpns1.alibabaonline.com. hua.fu.alibaba-inc.com. (
+                                SERIAL ; serial
+                                3600      ; refresh (1 hour)
+                                720      ; retry (15 minutes)
+                                1209600 ; expire (2 weeks)
+                                3600      ; minimum (6 minutes)
+                                )
+                        NS      tpns1.alibabaonline.com.
+                        NS      tpns2.alibabaonline.com.
+                        A       DOMAIN_IP
+                        MX      10 DOMAIN_NAME
+
+; record begin

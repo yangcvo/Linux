@@ -1,0 +1,17 @@
+# saltstack api server config
+salturl: "https://127.0.0.1:8080"
+saltusername: "saltapi"
+saltpassword: "passwd"
+logurl: "127.0.0.1"
+
+appname:
+  version: "0.1"
+
+  beta:
+      info: "beta evn"
+      project: "xxxx"
+      xxxx3: "Run Cmd Error %s"
+      host:
+       - hostname: salt-key
+         ip: 172.31.0.83
+

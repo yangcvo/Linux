@@ -1,0 +1,125 @@
+#!/bin/bash
+#***************************************************************************************************************#
+# ScriptName:           functions.sh                                                                            #
+# Author:               hua.fu                                                                                  #
+# Date:                 2004-03-21                                                                              #
+# Function:             functions to be used by most or all shell scripts                                       #
+#***************************************************************************************************************#
+# Make sure umask is sane
+umask 022
+
+# First set up a default search path.
+export PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin"
+
+# Define var
+CHECKCONF=/sbin/named-checkconf
+CHECKZONE=/sbin/named-checkzone
+RNDC_CMD=/sbin/rndc
+#ZONEDIR=/etc/namedb/bin/db
+# Get a sane screen width
+[ -z "${COLUMNS:-}" ] && COLUMNS=80
+
+BOOTUP=color
+RES_COL=0
+MOVE_TO_COL="echo -en \\033[${RES_COL}G"
+SETCOLOR_SUCCESS="echo -en \\033[1;32m"
+SETCOLOR_FAILURE="echo -en \\033[1;31m"
+SETCOLOR_WARNING="echo -en \\033[1;33m"
+SETCOLOR_NORMAL="echo -en \\033[0;39m"
+
+display_success() {
+  $MOVE_TO_COL
+  echo -n "[  "
+  $SETCOLOR_SUCCESS
+  echo -en $"OK"
+  $SETCOLOR_NORMAL
+  echo -e "  ]"
+  return 0
+}
+
+display_failure() {
+  $MOVE_TO_COL
+  echo -n "["
+  $SETCOLOR_FAILURE
+  echo -en $"FAILED"
+  $SETCOLOR_NORMAL
+  echo -e "]"
+  return 1
+}
+
+display_passed() {
+  $MOVE_TO_COL
+  echo -n "["
+  $SETCOLOR_WARNING
+  echo -en $"PASSED"
+  $SETCOLOR_NORMAL
+  echo -e "]"
+  return 1
+}
+
+display_warning() {
+  $MOVE_TO_COL
+  echo -n "["
+  $SETCOLOR_WARNING
+  echo -en $"WARNING"
+  $SETCOLOR_NORMAL
+  echo -e "]"
+  return 1
+}
+display_message() {
+  echo -en "\\033[${RES_COL}G"
+  $SETCOLOR_FAILURE
+  echo -en $"$1"
+  $SETCOLOR_NORMAL
+  return 0
+}
+
+display_message2() {
+  echo -en "\\033[${RES_COL}G"
+  $SETCOLOR_FAILURE
+  echo -e $"$1"
+  $SETCOLOR_NORMAL
+  return 0
+}
+
+display_message3() {
+menu_id=$2
+menu_sub=$3
+cat <<EOF
+------------------------------------------------------------
+[$2 - $3 Result ]
+EOF
+  echo -en "\\033[${RES_COL}G"
+  $SETCOLOR_SUCCESS
+  echo -e $"$1"
+  $SETCOLOR_NORMAL
+  return 0
+}
+
+display_title() {
+  echo -en "\\033[${RES_COL}G"
+  $SETCOLOR_WARNING
+  echo -e $"$1"
+  $SETCOLOR_NORMAL
+  return 0
+}
+exit_root () {
+    echo Error!
+    echo
+    echo "root (the superuser) can't run this script."
+    echo
+    exit 1
+}
+
+error_log () {
+    echo "Please Check Error log $ERRERLOG ON blog-admin!"
+}
+
+# Function:log() log the infomation to logfile
+log ()
+{
+   if [ ! -e $2 ] ;then
+		touch $2
+	fi
+	echo "`date +%Y-%m-%d-%k:%M:%S` localhost: $1" >> $2
+}

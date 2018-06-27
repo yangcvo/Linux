@@ -1,0 +1,5 @@
+zone "DOMAIN_NAME"  IN {
+	type slave;
+	file "db/hosts.DOMAIN_NAME";
+	masters { 121.0.17.61; };
+};
